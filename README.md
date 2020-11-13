@@ -1,6 +1,26 @@
 # wasserstein
 C++ implementation of the Wasserstein distance (or earth mover's distance)
 
+### Parameters
+```
+A: Values observed in the distribution A
+
+AWeights: Weight for each value of A
+
+B: Values observed in the distribution B
+
+BWeights: Weight for each value of B
+```
+### Usage
+
+```
+std::vector<double> av = {3.4, 3.9, 7.5, 7.8};
+std::vector<double> aw = {1.4, 0.9, 3.1, 7.2};
+std::vector<double> bv = {4.5, 1.4};
+std::vector<double> bw = {3.2, 3.5};
+
+dist = wasserstein(av,aw,bv,bw);
+```
 
 ### Examples
 
@@ -14,7 +34,7 @@ C++ implementation of the Wasserstein distance (or earth mover's distance)
 
 View testdist.cpp to see examples on how to use
 ```
-g++ testdist.cpp -o test
+g++ testdist.cpp -o test -I..
 ./test
 
 The earth movers distance is: 0
